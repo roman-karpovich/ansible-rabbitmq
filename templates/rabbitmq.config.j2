@@ -1,7 +1,10 @@
 [
   {rabbit, [
+{% if rabbitmq_conf_consumer_timeout != '' %}
+   {consumer_timeout, {{ rabbitmq_conf_consumer_timeout }}},
+{% endif %}
 {% if rabbitmq_conf_tcp_listeners_address != '' %}
    {tcp_listeners, [{"{{ rabbitmq_conf_tcp_listeners_address }}", {{ rabbitmq_conf_tcp_listeners_port }}}]}
-  ]}
 {% endif %}
+  ]}
 ].
