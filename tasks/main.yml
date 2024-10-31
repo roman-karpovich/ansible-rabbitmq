@@ -1,6 +1,6 @@
 ---
 
-- include_tasks: service.yml
+- import_tasks: service.yml
   become: yes
   when: rabbitmq_enabled
   tags: [rabbitmq]
