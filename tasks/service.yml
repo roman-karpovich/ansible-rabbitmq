@@ -17,7 +17,7 @@
     name: deps/rockandska/ansible-role-erlang
   become: yes
 
-- include: install.deb.yml
+- include_tasks: install.deb.yml
 
 - name: Ensure RabbitMQ is running
   service:
